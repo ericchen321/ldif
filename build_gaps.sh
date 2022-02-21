@@ -40,6 +40,8 @@ else
   # provide libGL.so.1.2.0. Reinstalling libgl1-mesa-glx results in libGL.so.1.2.0 correctly
   # existing in /usr/lib/x86_64-linux-gnu as it should.
   sudo apt-get install --reinstall libgl1-mesa-glx
+  # Install libglew-dev
+  sudo apt install libglew-dev
 fi
 # If the above command(s) fail, get the GL/gl.h and GL/glu.h headers, OSMesa and GL
 # static libraries (osmesa on macos), delete the above code, and try again.
