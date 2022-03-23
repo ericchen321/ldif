@@ -7,11 +7,13 @@ parameterized==0.7.0
 six==1.14.0
 scikit_image==0.16.2
 scipy==1.4.1
-tensorflow_hub==0.8.0
+#tensorflow_hub==0.8.0
 joblib==0.14.1
 pandas==1.0.3
 tabulate==0.8.3
-tensorflow-gpu==1.15.2; sys_platform == 'linux'
-tensorflow==1.15.2; sys_platform == 'darwin'
+#tensorflow-gpu==1.15.2; sys_platform == 'linux'
+#tensorflow==1.15.2; sys_platform == 'darwin'
+nvidia-pyindex
+nvidia-tensorflow
 apache_beam==2.22.0
 Pillow==7.1.2
