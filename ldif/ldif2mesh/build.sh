@@ -42,6 +42,14 @@ if [[ $major_version -ge 10 ]]; then
     -gencode=arch=compute_75,code=sm_75"
 fi
 
+# Support for Ampere (e.g. RTX 3090). Requires CUDA 11.
+if [[ $major_version -ge 11 ]]; then
+  echo "Adding CUDA 11 Targets."
+  targets="${targets} \
+    -gencode=arch=compute_80,code=sm_80"
+fi
+
+nvcc --version
 nvcc -Xptxas -O3 \
   ${targets} \
   --ptxas-options=-v -maxrregcount 63 $1 \
