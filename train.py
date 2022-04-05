@@ -208,11 +208,11 @@ def main(argv):
 
   if FLAGS.reserve_memory_for_inference_kernel and sys.platform != "darwin":
     current_free = gpu_util.get_free_gpu_memory(0)
-    allowable = current_free - (1024 + 512)  # ~1GB
-    allowable_fraction = allowable / current_free
-    if allowable_fraction <= 0.0:
-      raise ValueError(f"Can't leave 1GB over for the inference kernel, because"
-                       f" there is only {allowable} total free GPU memory.")
+    # allowable = current_free - (1024 + 512)  # ~1GB
+    allowable_fraction = 0.333
+    # if allowable_fraction <= 0.0:
+    #   raise ValueError(f"Can't leave 1GB over for the inference kernel, because"
+    #                    f" there is only {allowable} total free GPU memory.")
     log.info(f'TensorFlow can use up to {allowable_fraction*100}% of the total'
              ' GPU memory.')
   else:
@@ -221,7 +221,6 @@ def main(argv):
       per_process_gpu_memory_fraction=allowable_fraction)
 
   config = tf.compat.v1.ConfigProto(gpu_options=gpu_options)
-  config.gpu_options.per_process_gpu_memory_fraction = 0.5
   config.gpu_options.allow_growth = True
   config.gpu_options.polling_inactive_delay_msecs = 10
   with tf.compat.v1.Session(config=config) as session:
