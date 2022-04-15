@@ -9,7 +9,10 @@ ldif/trained_models/
 obj_files_GT/
 ply_files_GT/
 
-# meshes
+# Shapes under metrics/
+metrics/*.ply
+
+# Meshes for dataset construction
 meshes_*/
 
 # datasets
