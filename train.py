@@ -209,7 +209,7 @@ def main(argv):
   if FLAGS.reserve_memory_for_inference_kernel and sys.platform != "darwin":
     current_free = gpu_util.get_free_gpu_memory(0)
     # allowable = current_free - (1024 + 512)  # ~1GB
-    allowable_fraction = 0.333
+    allowable_fraction = 0.4
     # if allowable_fraction <= 0.0:
     #   raise ValueError(f"Can't leave 1GB over for the inference kernel, because"
     #                    f" there is only {allowable} total free GPU memory.")
