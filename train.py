@@ -119,6 +119,7 @@ def build_model_config(dataset):
   }
   model_config = experiments.ModelConfig(builder_fun_dict[FLAGS.model_type]())
   model_config.hparams.bs = FLAGS.batch_size
+  model_config.hparams.lr = 2e-4
   model_config.train = True
   model_config.eval = False
   model_config.inference = False
@@ -209,7 +210,7 @@ def main(argv):
   if FLAGS.reserve_memory_for_inference_kernel and sys.platform != "darwin":
     current_free = gpu_util.get_free_gpu_memory(0)
     # allowable = current_free - (1024 + 512)  # ~1GB
-    allowable_fraction = 0.4
+    allowable_fraction = 0.2
     # if allowable_fraction <= 0.0:
     #   raise ValueError(f"Can't leave 1GB over for the inference kernel, because"
     #                    f" there is only {allowable} total free GPU memory.")
