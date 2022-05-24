@@ -3,9 +3,9 @@
 ldif_repo_dirpath="$1"
 num_steps="$2"
 
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ dragon 100001
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ dragon_warrior 100001
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ engine 100001
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ guangong 100001
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ lion 100001
-./exp_scripts/train_gt_norm.sh /home/eric/cpsc533r/project/ldif/ thai_statue 100001
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath dragon $num_steps
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath dragon_warrior $num_steps
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath engine $num_steps
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath guangong $num_steps
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath lion $num_steps
+./exp_scripts/train_gt_norm.sh $ldif_repo_dirpath thai_statue $num_steps
